@@ -16,8 +16,8 @@ project(tinyxml2 VERSION 2.0.0
 #add_subdirectory(src/main)
 # STATIC, SHARED, MODULE, INTERFACE
 add_library(tinyxml2 STATIC
-        ./src/main/tinyxml2/tinyxml2.cpp
-        ./src/main/tinyxml2/tinyxml2.h
+        ./src/main/tinyxml2.cpp
+        ./src/main/tinyxml2.h
 )
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
