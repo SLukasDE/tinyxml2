@@ -19,24 +19,25 @@ add_library(tinyxml2 STATIC
         ./src/main/tinyxml2/tinyxml2.cpp
         ./src/main/tinyxml2/tinyxml2.h
 )
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(tinyxml2 PUBLIC ./src/main)
 target_compile_features(tinyxml2 PUBLIC cxx_std_11)
 set_property(TARGET tinyxml2 PROPERTY POSITION_INDEPENDENT_CODE ON)
 
-install(TARGETS tinyxml2
-        EXPORT tinyxml2-export
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib
-)
-
-install(EXPORT      tinyxml2-export
-        FILE        tinyxml2Targets.cmake
-        NAMESPACE   tinyxml2::
-        DESTINATION lib/cmake
-)
-
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml2Config.cmake
-        DESTINATION "lib/cmake"
-)
+#install(TARGETS tinyxml2
+#        EXPORT tinyxml2-export
+#        LIBRARY DESTINATION lib
+#        ARCHIVE DESTINATION lib
+#)
+#
+#install(EXPORT      tinyxml2-export
+#        FILE        tinyxml2Targets.cmake
+#        NAMESPACE   tinyxml2::
+#        DESTINATION lib/cmake
+#)
+#
+#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml2Config.cmake
+#        DESTINATION "lib/cmake"
+#)
 
